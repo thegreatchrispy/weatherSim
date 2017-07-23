@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="weatherSim" default="build" basedir="..">
+	
+	<property name="src" value="${basedir}/src" />
+	<property name="lib" value="${basedir}/lib" />
+	<property name="bin" value="${basedir}/bin" />
+	<property name="doc" value="${basedir}/doc" />
+	<property name="jar" value="${basedir}/jar" />
+	<property name="info.txt" value="${basedir}/info.txt" />
+	<property name="jarbasename" value="weatherSim" />
+	<property name="jarextension" value=".jar" />
+
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="log" depends="vrsn_unavail" description="">
+		<echo message="Writing info.txt..." />
+		<echo message="Build Date:         ${DSTAMP}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="--------------------------------------------------------------------------------${line.separator}" file="${info.txt}" append="true" />
+		<echo message="Java Vendor:        ${java.vendor}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="Java Version:       ${ant.java.version}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="Ant Version:        ${ant.version}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="Ant Java Version:   ${ant.java.version}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="OS Name:            ${os.name}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="OS Version:         ${os.version}${line.separator}" file="${info.txt}" append="true" />
+		<echo message="OS Arch:            ${os.arch}${line.separator}" file="${info.txt}" append="true" />
+	</target>
+
+	<target name="prep" description="">
+		<delete dir="${bin}" failonerror="false" includeemptydirs="true" />
+		<delete dir="${jar}" failonerror="false" includeemptydirs="true" />
+		<delete dir="${lib}" failonerror="false" includeemptydirs="true" />
+		<delete dir="${doc}" failonerror="false" includeemptydirs="true" />
+		<mkdir dir="${bin}" />
+		<mkdir dir="${jar}" />
+		<mkdir dir="${lib}" />
+		<mkdir dir="${doc}" />
+	</target>
+
+	<target name="update_libs" description="">
+	</target>
+
+	<target name="clean_log">
+		<delete file="${info.txt}" failonerror="false" verbose="true" />
+	</target>
+
+	<target name="clean_bin">
+		<delete includeemptydirs="true" verbose="true" >
+			<fileset dir="${bin}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="clean_jar">
+		<delete includeemptydirs="true" verbose="true" >
+			<fileset dir="${jar}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="clean_doc">
+		<delete includeemptydirs="true" verbose="true" >
+			<fileset dir="${doc}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="clean" depends="clean_log,clean_bin,clean_jar,clean_doc" description=""/>
+
+	<target name="compile" depends="clean_bin,log" description="">
+		<javac srcdir="${src}" includeantruntime="false" destdir="${bin}" includes="**/*.java">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="debug" depends="clean_bin" description="">
+		<javac srcdir="${src}" includeantruntime="false" destdir="${bin}" debug="on" debuglevel="lines,vars,source" includes="**/*.java">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="clean_jar" description="">
+		<jar destfile="${jar}/${jarbasename}${jarextension}" whenmanifestonly="fail">
+			<fileset dir="${bin}" includes="**/*.class" />
+			<fileset dir="${basedir}" includes="info.txt" />
+		</jar>
+	</target>
+
+	<target name="javadoc" depends="clean_doc" description="">
+		<javadoc destdir="${doc}" author="true" version="true" use="true" windowtitle="${ant.project.name} Documentation">
+			<fileset dir="${src}" />
+			<doctitle><![CDATA[<h1>${ant.project.name} Javadoc</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2017 CGI Inc. All Rights Reserved.</i>]]></bottom>
+			<link offline="true" href="https://docs.oracle.com/javase/8/docs/api/" packagelistLoc="C:\tmp"/>
+		</javadoc>
+	</target>
+
+	<target name="build" depends="prep,update_libs,compile,jar" description=""/>
+
+	<target name="all" depends="prep,update_libs,compile,jar,javadoc" description=""/>
+</project>

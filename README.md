@@ -34,3 +34,12 @@ Wind speed will change proportionally to the magnitude in difference between cel
 Wind direction will point from cells of high pressure towards cells of low pressure. The ideal way would be for wind directions to move in a clockwise direction.
 
 The implementation will for now be loosely based on the implementation of Conway's Game of Life found [here](https://bitstorm.org/gameoflife/code/).
+
+## Checklist for Implementation
+
+- [ ] Create basic objects.
+- [ ] Respresent weather using text.
+    - [ ] Represent high pressure cells with "^".
+    - [ ] Represent low pressure cells with "v".
+
+More to come.
