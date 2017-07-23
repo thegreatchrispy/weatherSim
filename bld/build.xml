@@ -16,7 +16,7 @@
 		</fileset>
 	</path>
 
-	<target name="log" depends="vrsn_unavail" description="">
+	<target name="log" description="">
 		<echo message="Writing info.txt..." />
 		<echo message="Build Date:         ${DSTAMP}${line.separator}" file="${info.txt}" append="true" />
 		<echo message="--------------------------------------------------------------------------------${line.separator}" file="${info.txt}" append="true" />
