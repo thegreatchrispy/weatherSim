@@ -1,7 +1,9 @@
-# weatherSim
+s# weatherSim
 This is a Java implementation of a simple weather simulator. 
 
 The graphics library that will be used has yet to be decided.
+
+The build for this project uses Ant. Download the latest version of Apache Ant from [this link](http://ant.apache.org/bindownload.cgi).
 
 ## Parameters
 
@@ -37,7 +39,7 @@ The implementation will for now be loosely based on the implementation of Conway
 
 ## Checklist for Implementation
 
-- [ ] Create basic objects.
+- [x] Create basic objects.
 - [ ] Respresent weather using text.
     - [ ] Represent high pressure cells with "^".
     - [ ] Represent low pressure cells with "v".
