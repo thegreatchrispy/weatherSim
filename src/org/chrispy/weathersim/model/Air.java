@@ -5,6 +5,12 @@ public class Air {
 	private double temperature;
 	private double pressure;
 
+	public Air () {
+		altitude = 0.0;      // Sea Level
+		temperature = 0.0;   // Standard Temperature in Celsius
+		pressure = 101.3;    // Standard Pressure in kPa
+	}
+
 	public double getAltitude () {
 		return altitude;
 	}

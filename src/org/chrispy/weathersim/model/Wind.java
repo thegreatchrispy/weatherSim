@@ -4,6 +4,11 @@ public class Wind {
 	private double speed;
 	private byte direction;
 
+	public Wind () {
+		speed = 0.0;      // Still wind
+		direction = 0.0;  // North by default
+	}
+
 	public double getSpeed () {
 		return speed;
 	}

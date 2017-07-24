@@ -14,6 +14,10 @@ public class Cell {
         this.col = (short)col;
         this.row = (short)row;
         neighborCells = 0;
+
+        air = new Air();
+        water = new Water();
+        wind = new Wind();
     }
 
     public boolean equals (Object o) {

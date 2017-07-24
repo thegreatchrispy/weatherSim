@@ -4,6 +4,11 @@ public class Water {
 	private double humidity;
 	private double vaporPressure;
 
+	public Water () {
+		humidity = 50.0;      // Percentage
+		vaporPressure = 1.0;  // Estimated standard
+	}
+
 	public double getHumidity () {
 		return humidity;
 	}
