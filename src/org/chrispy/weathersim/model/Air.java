@@ -34,4 +34,10 @@ public class Air {
 	public void setPressure (double pres) {
 		pressure = pres;
 	}
+
+	public String toString() {
+		return "Altitude: " + altitude + " m\n" +
+				"Temperature: " + temperature + " C\n" +
+				"Pressure: " + pressure + " kPa";
+	}
 }

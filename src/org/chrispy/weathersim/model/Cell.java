@@ -3,7 +3,6 @@ package org.chrispy.weathersim.model;
 public class Cell {
     public final short col;
     public final short row;
-    public byte neighborCells;
 
     private Air air;
     private Water water;
@@ -13,7 +12,6 @@ public class Cell {
     public Cell (int col, int row) {
         this.col = (short)col;
         this.row = (short)row;
-        neighborCells = 0;
 
         air = new Air();
         water = new Water();
@@ -33,6 +31,9 @@ public class Cell {
     }
 
     public String toString() {
-        return "Cell at ("+col+", "+row+") with "+neighborCells+" neighbor"+(neighborCells==1?"":"s");
+        return "Cell at ("+col+", "+row+") :\n" +
+        air.toString() +
+        water.toString() + 
+        wind.toString();
     }
 }

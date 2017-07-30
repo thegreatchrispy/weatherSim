@@ -24,4 +24,9 @@ public class Water {
 	public void setVaporPressure (double vapPressure) {
 		vaporPressure = vapPressure;
 	}
+
+	public String toString() {
+		return "Humidity: " + humidity + "%\n" +
+				"Vapor Pressure: " + vaporPressure + " kPa";
+	}
 }

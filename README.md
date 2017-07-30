@@ -1,4 +1,4 @@
-s# weatherSim
+# weatherSim
 This is a Java implementation of a simple weather simulator. 
 
 The graphics library that will be used has yet to be decided.
