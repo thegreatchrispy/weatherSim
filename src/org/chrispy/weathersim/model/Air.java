@@ -11,6 +11,12 @@ public class Air {
 		pressure = 101.3;    // Standard Pressure in kPa
 	}
 
+	public Air (double alt, double temp, double pres) {
+		altitude = alt;
+		temperature = temp;
+		pressure = pres;
+	}
+
 	public double getAltitude () {
 		return altitude;
 	}

@@ -10,6 +10,11 @@ public class Wind {
 		direction = 0;  // North by default
 	}
 
+	public Wind (double spe, byte dir) {
+		speed = spe;
+		direction = dir;
+	}
+
 	public double getSpeed () {
 		return speed;
 	}

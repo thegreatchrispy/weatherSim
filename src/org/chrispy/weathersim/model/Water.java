@@ -9,6 +9,11 @@ public class Water {
 		vaporPressure = 1.0;  // Estimated standard
 	}
 
+	public Water (double hum, double vPres) {
+		humidity = hum;
+		vaporPressure = vPres;
+	}
+
 	public double getHumidity () {
 		return humidity;
 	}

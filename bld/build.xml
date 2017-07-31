@@ -90,7 +90,7 @@
 		<javadoc destdir="${doc}" author="true" version="true" use="true" windowtitle="${ant.project.name} Documentation">
 			<fileset dir="${src}" />
 			<doctitle><![CDATA[<h1>${ant.project.name} Javadoc</h1>]]></doctitle>
-			<bottom><![CDATA[<i>Copyright &#169; 2017 CGI Inc. All Rights Reserved.</i>]]></bottom>
+			<bottom><![CDATA[<i>Copyright &#169; 2017 thegreatchrispy. All Rights Reserved.</i>]]></bottom>
 			<link offline="true" href="https://docs.oracle.com/javase/8/docs/api/" packagelistLoc="C:\tmp"/>
 		</javadoc>
 	</target>
