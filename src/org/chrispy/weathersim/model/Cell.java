@@ -18,8 +18,8 @@ public class Cell {
 		wind = new Wind();
 	}
 
-	public boolean equals (Object o) {
-		if (!(o instanceof Cell)) {
+	public boolean equals (Object obj) {
+		if (!(obj instanceof Cell)) {
 			return false;
 		}
 
