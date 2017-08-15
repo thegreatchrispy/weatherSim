@@ -45,3 +45,28 @@ The implementation will for now be loosely based on the implementation of Conway
     - [ ] Represent low pressure cells with "v".
 
 More to come.
+
+## Pseudocode
+
+This is going to be the overall logic involved in the simulation engine:
+
+```java
+while (true) {
+    CellGrid cells = getAllCells();
+
+    for (Cell cell : cells) {
+        prevCells = cell.getSurroundingCells();
+        cell = determineNewProperties(cell, prevCells);
+
+        if (newCellGrid.getCell(cell.x, cell.y) == null) {
+            newCellGrid.addCell(cell);
+        }
+        else {
+            newCellGrid.mergeCell(cell);
+        }
+    }
+
+    // ?clearOldCellGrid(cells);
+    displayNewCellGrid(newCellGrid);
+}
+```
