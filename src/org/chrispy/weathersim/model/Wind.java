@@ -3,16 +3,19 @@ package org.chrispy.weathersim.model;
 public class Wind {
 	private double speed;
 	private byte direction;
+	private String strDirection;
 	private String[] directions = {"North", "Northeast", "East", "Southeast", "South", "Southwest", "West", "Northwest"};
 
 	public Wind () {
 		speed = 0.0;      // Still wind
 		direction = 0;  // North by default
+		strDirection = directions[direction];
 	}
 
 	public Wind (double spe, byte dir) {
 		speed = spe;
 		direction = dir;
+		strDirection = directions[direction];
 	}
 
 	public double getSpeed () {
@@ -37,6 +40,6 @@ public class Wind {
 
 	public String toString() {
 		return "Speed: " + speed + "km/h\n" +
-				"Direction: " + directions[direction];
+				"Direction: " + strDirection;
 	}
 }

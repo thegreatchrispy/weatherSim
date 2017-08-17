@@ -26,8 +26,20 @@ public class Cell {
 		return col == ((Cell)o).col && row == ((Cell)o).row;
 	}
 
-	public int hashCode () {
-		return HASHFACTOR*row+col;
+	public int getX () {
+		return col;
+	}
+
+	public void setX (int x) {
+		col = x;
+	}
+
+	public int getY () {
+		return row;
+	}
+
+	public int getX (int y) {
+		row = y;
 	}
 
 	public Air getAir () {

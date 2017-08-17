@@ -55,7 +55,7 @@ while (true) {
     CellGrid cells = getAllCells();
 
     for (Cell cell : cells) {
-        prevCells = cell.getSurroundingCells();
+        prevCells = getSurroundingCells(cell);
         cell = determineNewProperties(cell, prevCells);
 
         if (newCellGrid.getCell(cell.x, cell.y) == null) {
