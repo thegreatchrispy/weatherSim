@@ -34,8 +34,12 @@ public class Wind {
 		direction = dir;
 	}
 
-	public String directionToString () {
-		return directions[direction];
+	public String getStringDirection () {
+		return strDirection;
+	}
+
+	public void setStringDirection (String dir) {
+		strDirection = dir;
 	}
 
 	public String toString() {

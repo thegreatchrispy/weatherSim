@@ -1,8 +1,8 @@
 package org.chrispy.weathersim.model;
 
 public class Cell {
-	public final short col;
-	public final short row;
+	public int x;
+	public int y;
 
 	private Air air;
 	private Water water;
@@ -10,8 +10,8 @@ public class Cell {
 	private final int HASHFACTOR = 5000;
 
 	public Cell (int col, int row) {
-		this.col = (short)col;
-		this.row = (short)row;
+		x = col;
+		y = row;
 
 		air = new Air();
 		water = new Water();
@@ -23,23 +23,23 @@ public class Cell {
 			return false;
 		}
 
-		return col == ((Cell)o).col && row == ((Cell)o).row;
+		return x == ((Cell)obj).x && y == ((Cell)obj).y;
 	}
 
 	public int getX () {
-		return col;
+		return x;
 	}
 
-	public void setX (int x) {
-		col = x;
+	public void setX (int col) {
+		x = col;
 	}
 
 	public int getY () {
-		return row;
+		return y;
 	}
 
-	public int getX (int y) {
-		row = y;
+	public void setY (int row) {
+		y = row;
 	}
 
 	public Air getAir () {
@@ -67,7 +67,7 @@ public class Cell {
 	}
 
 	public String toString() {
-		return "Cell at ("+col+", "+row+") :\n" +
+		return "Cell at ("+x+", "+y+") :\n" +
 		air.toString() +
 		water.toString() + 
 		wind.toString();

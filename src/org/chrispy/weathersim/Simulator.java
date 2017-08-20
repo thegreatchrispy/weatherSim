@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-public class Simulator implements CellGrid {
+public class Simulator {
 	private int cellCols;
 	private int cellRows;
 	private int generations;
